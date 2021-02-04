@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class WeatherInfoActivity extends AppCompatActivity {
 
-    private final static String OWM_KEY = "9f7cc9e9559d9cf47bb8e7d592f3783c";
     private TextView tempMinTextView;
     private TextView tempMaxTextView;
     private TextView tempAverageTextView;
@@ -40,7 +39,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
         criteria.setPowerRequirement(Criteria.ACCURACY_MEDIUM);
         LocationService locationService = AndroidLocationService.ofContextCriteria(this, criteria);
 
-        WeatherService weatherService = AndroidWeatherService.ofKey(OWM_KEY);
+        WeatherService weatherService = AndroidWeatherService.ofKey(getString(R.string.OWM_KEY));
 
         Location location = null;
         Intent intent = getIntent();
