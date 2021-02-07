@@ -14,6 +14,8 @@ import ch.epfl.cs305.project1.R;
 public class WeatherOptionsActivity extends AppCompatActivity {
 
     private final static int PERMISSION_REQUEST_CODE = 1;
+    public final static String EXTRA_BOX_CHECKED = "ch.epfl.cs305.project1.useCurrentLocation";
+    public final static String EXTRA_ADDRESS_FIELD = "ch.epfl.cs305.project1.address";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,8 @@ public class WeatherOptionsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WeatherInfoActivity.class);
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
         EditText editText = (EditText) findViewById(R.id.addressEditText);
-        intent.putExtra("useCurrentLocation", checkBox.isChecked());
-        intent.putExtra("address", editText.getText().toString());
+        intent.putExtra(EXTRA_BOX_CHECKED, checkBox.isChecked());
+        intent.putExtra(EXTRA_ADDRESS_FIELD, editText.getText().toString());
         if(checkBox.isChecked()) {
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
                     PackageManager.PERMISSION_GRANTED) {

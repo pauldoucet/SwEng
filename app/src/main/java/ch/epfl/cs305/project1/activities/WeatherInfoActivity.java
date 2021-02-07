@@ -43,7 +43,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
 
         Location location = null;
         Intent intent = getIntent();
-        boolean isChecked = intent.getBooleanExtra("useCurrentLocation", false);
+        boolean isChecked = intent.getBooleanExtra(WeatherOptionsActivity.EXTRA_BOX_CHECKED, false);
 
         if(isChecked) {
             try {
@@ -54,7 +54,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
             }
         }
         else {
-            String address = intent.getStringExtra("address");
+            String address = intent.getStringExtra(WeatherOptionsActivity.EXTRA_ADDRESS_FIELD);
             location = geocodingService.nameToLocation(address);
         }
 
