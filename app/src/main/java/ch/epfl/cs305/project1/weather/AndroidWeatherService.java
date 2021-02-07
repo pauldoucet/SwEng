@@ -1,6 +1,5 @@
 package ch.epfl.cs305.project1.weather;
 
-import android.util.Log;
 import ch.epfl.cs305.project1.location.Location;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -77,7 +76,6 @@ public class AndroidWeatherService implements WeatherService {
         try {
             URL url = new URL(queryUrl);
             connection = buildConnection(url);
-            int responseCode = connection.getResponseCode();
 
             InputStream underlyingStream = connection.getInputStream();
 
