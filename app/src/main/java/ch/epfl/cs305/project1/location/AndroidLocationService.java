@@ -37,10 +37,6 @@ public class AndroidLocationService implements LocationService {
     }
 
     private String bestProvider() {
-        List<String> providers = manager.getAllProviders();
-        for(String s : providers) {
-            Log.e("provider", s);
-        }
         return manager.getBestProvider(criteria, false);
     }
 
