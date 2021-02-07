@@ -25,8 +25,8 @@ public class WeatherOptionsActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         Intent intent = new Intent(this, WeatherInfoActivity.class);
-        CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-        EditText editText = (EditText) findViewById(R.id.addressEditText);
+        CheckBox checkBox = findViewById(R.id.checkBox);
+        EditText editText = findViewById(R.id.addressEditText);
         intent.putExtra(EXTRA_BOX_CHECKED, checkBox.isChecked());
         intent.putExtra(EXTRA_ADDRESS_FIELD, editText.getText().toString());
         if(checkBox.isChecked()) {
