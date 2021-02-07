@@ -1,29 +1,21 @@
 package ch.epfl.cs305.project1;
 
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.widget.EditText;
-import static androidx.test.espresso.Espresso.onView;
-
-import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.action.ViewActions;
-
-import static androidx.test.espresso.action.ViewActions.*;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.matcher.IntentMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import ch.epfl.cs305.project1.activities.GreetingActivity;
 import ch.epfl.cs305.project1.activities.MainActivity;
-import ch.epfl.cs305.project1.activities.WeatherOptionsActivity;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 /**
  * @author Paul Doucet (316442)
