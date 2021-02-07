@@ -38,8 +38,10 @@ public class MainActivityTest {
     public void clickingGreetingButtonSendsCorrectIntent() {
         Intents.init();
         onView(withId(R.id.mainName)).perform(ViewActions.clearText(), typeText("Paul"));
+        closeSoftKeyboard();
         onView(withId(R.id.mainGoButton)).perform(ViewActions.click());
         Intents.intended(Matchers.allOf(IntentMatchers.hasComponent(GreetingActivity.class.getName()), IntentMatchers.hasExtra(MainActivity.EXTRA_MESSAGE, TEST_NAME)));
+        Intents.release();
     }
 
 }
