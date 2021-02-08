@@ -6,5 +6,5 @@ import java.io.IOException;
  * @author Paul Doucet (316442)
  */
 public interface LocationService {
-    Location getLocation() throws IOException;
+    Location getUserLocation() throws IOException;
 }

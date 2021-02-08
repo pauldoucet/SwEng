@@ -44,7 +44,7 @@ public class AndroidLocationService implements LocationService {
      * @return current user's location with respect ot the service criteria
      */
     @Override
-    public Location getLocation() throws IOException {
+    public Location getUserLocation() throws IOException {
         try {
             android.location.Location loc = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if(loc == null)
