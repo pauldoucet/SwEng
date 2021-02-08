@@ -47,7 +47,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
 
         if(isChecked) {
             try {
-                location = locationService.getLocation();
+                location = locationService.getUserLocation();
             }
             catch(IOException e){
                 Log.e("WeatherInfoActivity", "failed to retrieve user's current position");
