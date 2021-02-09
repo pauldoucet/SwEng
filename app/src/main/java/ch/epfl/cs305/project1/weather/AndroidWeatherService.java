@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import javax.inject.Inject;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
@@ -21,7 +22,8 @@ public class AndroidWeatherService implements WeatherService {
 
     private final String key;
 
-    private AndroidWeatherService(String key) {
+    @Inject
+    AndroidWeatherService(String key) {
         this.key = key;
     }
 
