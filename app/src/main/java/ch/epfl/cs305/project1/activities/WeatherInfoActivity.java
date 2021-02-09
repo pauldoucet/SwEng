@@ -2,6 +2,7 @@ package ch.epfl.cs305.project1.activities;
 
 import android.content.Intent;
 import android.location.Criteria;
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
         setContentView(R.layout.activity_weather_info);
 
         tempMinTextView = findViewById(R.id.tempMin);
