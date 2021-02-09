@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import ch.epfl.cs305.project1.R;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class WeatherOptionsActivity extends AppCompatActivity {
 
     private final static int PERMISSION_REQUEST_CODE = 1;

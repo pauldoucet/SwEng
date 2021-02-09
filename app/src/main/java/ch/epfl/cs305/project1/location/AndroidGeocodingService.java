@@ -4,16 +4,20 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.List;
 
 /**
  * @author Paul Doucet (316442)
  */
+@Singleton
 public class AndroidGeocodingService implements GeocodingService {
     private final Geocoder geocoder;
 
-    private AndroidGeocodingService(Geocoder geocoder) {
+    @Inject
+    AndroidGeocodingService(Geocoder geocoder) {
         this.geocoder = geocoder;
     }
 

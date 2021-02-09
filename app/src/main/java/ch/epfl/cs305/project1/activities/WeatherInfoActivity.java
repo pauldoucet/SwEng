@@ -12,9 +12,12 @@ import ch.epfl.cs305.project1.location.*;
 import ch.epfl.cs305.project1.weather.AndroidWeatherService;
 import ch.epfl.cs305.project1.weather.Forecast;
 import ch.epfl.cs305.project1.weather.WeatherService;
+import dagger.hilt.android.AndroidEntryPoint;
 
+import javax.inject.Inject;
 import java.io.IOException;
 
+@AndroidEntryPoint
 public class WeatherInfoActivity extends AppCompatActivity {
 
     private TextView tempMinTextView;
@@ -22,6 +25,9 @@ public class WeatherInfoActivity extends AppCompatActivity {
     private TextView tempAverageTextView;
     private TextView humidityTextView;
     private TextView windSpeedTextView;
+    @Inject GeocodingService geocodingService;
+    @Inject LocationService locationService;
+    @Inject WeatherService weatherService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +41,13 @@ public class WeatherInfoActivity extends AppCompatActivity {
         humidityTextView = findViewById(R.id.humidity);
         windSpeedTextView = findViewById(R.id.windSpeed);
 
-        GeocodingService geocodingService = AndroidGeocodingService.ofContext(this);
+        //geocodingService = AndroidGeocodingService.ofContext(this);
 
-        Criteria criteria = new Criteria();
-        criteria.setPowerRequirement(Criteria.ACCURACY_MEDIUM);
-        LocationService locationService = AndroidLocationService.ofContextCriteria(this, criteria);
+        //Criteria criteria = new Criteria();
+        //criteria.setPowerRequirement(Criteria.ACCURACY_MEDIUM);
+        //locationService = AndroidLocationService.ofContextCriteria(this, criteria);
 
-        WeatherService weatherService = AndroidWeatherService.ofKey(getString(R.string.OWM_KEY));
+        //weatherService = AndroidWeatherService.ofKey(getString(R.string.OWM_KEY));
 
         Location location = null;
         Intent intent = getIntent();

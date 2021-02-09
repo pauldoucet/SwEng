@@ -5,6 +5,7 @@ import android.location.Criteria;
 import android.location.LocationManager;
 import android.util.Log;
 
+import javax.inject.Inject;
 import java.io.IOException;
 import java.util.List;
 
@@ -16,7 +17,8 @@ public class AndroidLocationService implements LocationService {
     private final LocationManager manager;
     private final Criteria criteria;
 
-    private AndroidLocationService(LocationManager manager, Criteria criteria) {
+    @Inject
+    AndroidLocationService(LocationManager manager, Criteria criteria) {
         this.manager = manager;
         this.criteria = criteria;
     }
